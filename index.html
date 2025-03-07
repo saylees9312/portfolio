@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>portfolio</title>
+
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+        <script src="./js/jquery-3.7.1.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="./js/script.js"></script>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <!-- stats - count particles -->
+        <!-- <div class="count-particles"><span class="js-count-particles">--</span> particles</div> -->
+
+        <div class="cursor"></div>
+        <div class="cursor-follow"></div>
+        <header id="header">
+            <div class="inner">
+                <div class="menu-wrap">
+                    <a href="#" class="btn-change"><i class="hidden">change</i></a>
+                    <ul class="menu">
+                        <li><a href="#">main</a></li>
+                        <li><a href="#">section1</a></li>
+                        <li><a href="#">section2</a></li>
+                        <li><a href="#">section3</a></li>
+                        <li><a href="#">section4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="section0">
+                <div class="inner">
+                    <div class="main-title">
+                        <h1>portfolio</h1>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mini">scrolldown<span>↓</span></div>
+                </div>
+            </section>
+            <section class="section1">
+                <div class="sec1-bg"></div>
+                <div class="inner">
+                    <h2 class="sec-title">hello!</h2>
+                    <strong class="txt">
+                        눈 속에서 길을 밝히는 등불처럼, <br />
+                        사용자 경험을 디자인하는 웹 디자이너
+                    </strong>
+                    <p>
+                        디지털 환경은 단순한 정보 전달을 넘어, 사용자가 직접 경험하고 탐색하는 공간으로 변화하고
+                        있습니다. 저는 이러한 흐름에 맞춰 "사용자가 능동적으로 탐색할 수 있는 경험을 설계하는 웹
+                        디자이너"를 지향합니다.
+                    </p>
+                    <p>
+                        눈 속에 숨겨진 콘텐츠가 마우스의 움직임에 따라 자연스럽게 드러나듯, 디자인 역시 단순히 시각적인
+                        요소를 나열하는 것이 아니라, 사용자의 행동을 고려하고 인터랙션을 설계하는 과정이 중요하다고
+                        생각합니다.
+                    </p>
+                    <p>
+                        저는 디지털 경험을 탐험하는 가이드가 되어, 사용자들이 웹사이트를 통해 특별한 경험을 할 수 있도록
+                        돕는 디자이너가 되고자 합니다. 마치 눈 속에서 등불을 따라 길을 찾듯, 사용자가 제 디자인을 통해
+                        새로운 경험을 발견할 수 있도록 만드는 것이 저의 목표입니다.
+                    </p>
+                </div>
+            </section>
+            <section class="section2">
+                <div class="inner">
+                    <h2 class="sec-title">profile</h2>
+                    <div class="profile-wrap">
+                        <figure class="profile-img"><img src="" alt="박설희" /></figure>
+                        <div class="profile-con">
+                            <ul class="profile-list">
+                                <li>name</li>
+                                <li>birth</li>
+                                <li>character</li>
+                                <li>skills</li>
+                                <li>e-mail</li>
+                                <li>phone</li>
+                            </ul>
+                            <ul class="profile-normal">
+                                <li>박설희</li>
+                                <li>93.12.09</li>
+                                <li>성격</li>
+                                <li>tool</li>
+                                <li>saylees9312@naver.com</li>
+                                <li>010-2466-0156</li>
+                            </ul>
+                            <div class="fly">
+                                <span class="name">박설희</span>
+                                <span class="birth">93.12.09</span>
+                                <span class="keywords">성격</span>
+                                <span class="email">saylees9312@naver.com</span>
+                                <span class="phone">010-2466-0156</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section3">
+                <div class="inner">
+                    <h2 class="sec-title">project</h2>
+                    <div class="project-wrap">
+                        <ul class="project-list">
+                            <li>
+                                <a href="https://github.com/saylees9312/madforgarlic.git">
+                                    <p>Mad for Garlic</p>
+                                    <p>2024.11.28</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/saylees9312/jungheung.git">
+                                    <p>Junghoeng Group</p>
+                                    <p>2025.02.08</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.figma.com/design/sytdjnrQ9GEvQSi0mEFs2s/%ED%86%A0%EB%8F%85-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84-B%ED%8C%80?node-id=133-1056&t=grjih7DwKpxJTPpg-1"
+                                >
+                                    <p>Todok</p>
+                                    <p>2025.01.25</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Micro site</p>
+                                    <p>2024.12.10</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>banner design</p>
+                                    <p>2024.10~12</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="preview">
+                            <figure>
+                                <img src="#" alt="MFG-preview" />
+                                <p>preview</p>
+                            </figure>
+                            <figure>
+                                <img src="#" alt="JH-preview" />
+                                <p>preview</p>
+                            </figure>
+                            <figure>
+                                <img src="#" alt="Todok-preview" />
+                                <p>preview</p>
+                            </figure>
+                            <figure>
+                                <img src="#" alt="MS-preview" />
+                                <p>preview</p>
+                            </figure>
+                            <figure>
+                                <img src="#" alt="Banner-preview" />
+                                <p>preview</p>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section4">
+                <div class="sec4-bg"></div>
+                <div class="inner">
+                    <div class="sec4-con">
+                        <h2 class="sec-title">contact me?</h2>
+                        <a href="#">go</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="inner">contact me?</div>
+        </footer>
+        <button type="button" class="btn-top">top</button>
+    </body>
+</html>
