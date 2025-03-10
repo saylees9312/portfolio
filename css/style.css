@@ -34,7 +34,7 @@
 }
 
 canvas {
-    display: block;
+    display: inline-block;
     vertical-align: bottom;
 } /* ---- particles.js container ---- */
 #particles-js {
