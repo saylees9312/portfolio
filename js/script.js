@@ -108,12 +108,28 @@ document.addEventListener('DOMContentLoaded', () => {
         contactMe.style.display = 'block';
     });
 
+    // 컨텍미 버튼 클릭시 컨텍 섹션으로 이동
     contactMe.addEventListener('click', () => {
         gsap.to(window, {
             scrollTo: '.contact',
             duration: 1,
             ease: 'power2.inOut',
         });
+    });
+
+    // 스크롤 다운 애니메이션
+    const mini = document.querySelector('.mini');
+    const minitxt = new SplitType(mini, { types: 'chars' });
+
+    console.log(minitxt);
+
+    gsap.from('.mini .char', {
+        y: -30,
+        autoAlpha: 0.1,
+        ease: 'bounce.out',
+        yoyo: true,
+        stagger: 0.3,
+        repeat: -1,
     });
 
     // 메뉴를 클릭할때
@@ -164,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         y: 50,
     });
 
-    tl.from('.char', {
+    tl.from('.txt .char', {
         opacity: 0.1,
         stagger: 0.03,
     });
@@ -276,19 +292,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 호버할때 프리뷰 보여주기
     const project = document.querySelector('.project');
     const sec3Bg = project.querySelector('.sec3-bg');
-    const projectList = document.querySelector('project-list');
     const projectItems = document.querySelectorAll('.project-list li');
     const previewFigures = document.querySelectorAll('.preview figure');
     const previewContainer = document.querySelector('.preview');
     const previewImg = previewContainer.querySelector('img');
+    const popWrap = document.querySelector('.popup-wrap');
+    const popUp = document.querySelector('.popup');
+    const btnClose = document.querySelector('.btn-close');
+    const processBtn = document.querySelectorAll('.btn-process');
 
     gsap.set(previewContainer, {
         autoAlpha: 0,
         scale: 0.9,
-        position: 'absolute',
-        top: '50%',
-        left: '70%',
-        transform: 'translate(-50%, -50%)',
     });
 
     const projectTL = gsap.timeline();
@@ -309,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     projectItems.forEach((item, index) => {
         item.addEventListener('mouseenter', () => {
-            previewImg.setAttribute('src', `./img/preview-img${index + 1}.png`);
+            previewImg.setAttribute('src', `./img/preview-img${index + 1}.jpg`);
             gsap.from(previewFigures, {
                 autoAlpha: 0,
                 scale: 0.9,
@@ -332,11 +347,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 scale: 0.9,
                 duration: 0.3,
             }); // 마우스 떼면 숨김
+            gsap.to(
+                previewContainer,
+                {
+                    autoAlpha: 0,
+                    duration: 0.4,
+                },
+                '<'
+            );
         });
     });
     // 커서대신 프리뷰가 따라다니기 y축만
     sec3.addEventListener('mousemove', (e) => {
-        gsap.to(previewContainer, { top: e.clientY - e.clientY * 0.4 });
+        gsap.to(previewContainer, { top: e.clientY - e.clientY * 0.5 });
     });
-    // 프리뷰에 모자이크 효과 넣어볼까
+
+    btnClose.addEventListener('click', () => {
+        gsap.to(popWrap, {
+            autoAlpha: 0,
+            scale: 0.8,
+            duration: 0.5,
+        });
+    });
+
+    processBtn.addEventListener('click', function () {
+        gsap.to(popWrap, {
+            autoAlpha: 1,
+            scale: 1,
+            duration: 1,
+        });
+    });
+
+    // 팝업창 갱신시키기
 });
