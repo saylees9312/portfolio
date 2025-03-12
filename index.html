@@ -17,9 +17,20 @@
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
         <script src="./js/jquery-3.7.1.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="./js/loading.js"></script>
         <script src="./js/script.js"></script>
     </head>
     <body>
+        <div class="snow-container">
+            <div class="progress">
+                <div class="progress-img"></div>
+                <div class="progress-text">
+                    <strong>loading...</strong>
+                    <p>먹구름 모으는 중...</p>
+                </div>
+                <div class="progress-down">0%</div>
+            </div>
+        </div>
         <div id="particles-js"></div>
         <!-- stats - count particles -->
         <!-- <div class="count-particles"><span class="js-count-particles">--</span> particles</div> -->
@@ -79,6 +90,9 @@
                                 <span class="keywords">INTP</span>
                                 <span class="email">saylees9312@naver.com</span>
                                 <span class="phone">010-2466-0156</span>
+                                <span class="mind">합리적</span>
+                                <span class="mind2">유들유들</span>
+                                <span class="kind">情</span>
                             </div>
                         </div>
                     </div>
@@ -134,37 +148,7 @@
                                 </p>
                                 <div class="project-con">
                                     <a href="#"> banner </a>
-                                    <a href="#"> process </a>
-                                </div>
-                            </li>
-                            <li>
-                                <p>
-                                    banner design
-                                    <strong class="badge">5W</strong>
-                                </p>
-                                <div class="project-con">
-                                    <a href="#"> banner </a>
-                                    <a href="#"> process </a>
-                                </div>
-                            </li>
-                            <li>
-                                <p>
-                                    banner design
-                                    <strong class="badge">5W</strong>
-                                </p>
-                                <div class="project-con">
-                                    <a href="#"> banner </a>
-                                    <a href="#"> process </a>
-                                </div>
-                            </li>
-                            <li>
-                                <p>
-                                    banner design
-                                    <strong class="badge">5W</strong>
-                                </p>
-                                <div class="project-con">
-                                    <a href="#"> banner </a>
-                                    <a href="#"> process </a>
+                                    <a href="#" class="btn-process"> process </a>
                                 </div>
                             </li>
                             <li>
@@ -184,7 +168,37 @@
                                 </p>
                                 <div class="project-con">
                                     <a href="#"> banner </a>
-                                    <a href="#"> process </a>
+                                    <a href="#" class="btn-process"> process </a>
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    banner design
+                                    <strong class="badge">5W</strong>
+                                </p>
+                                <div class="project-con">
+                                    <a href="#"> banner </a>
+                                    <a href="#" class="btn-process"> process </a>
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    banner design
+                                    <strong class="badge">5W</strong>
+                                </p>
+                                <div class="project-con">
+                                    <a href="#"> banner </a>
+                                    <a href="#" class="btn-process"> process </a>
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    banner design
+                                    <strong class="badge">5W</strong>
+                                </p>
+                                <div class="project-con">
+                                    <a href="#"> banner </a>
+                                    <a href="#" class="btn-process"> process </a>
                                 </div>
                             </li>
                         </ul>
@@ -210,7 +224,7 @@
                 <div class="popup">
                     <div class="popup-inner">
                         <figure>
-                            <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1136588786.jpg" alt="" />
+                            <img src="" alt="" />
                         </figure>
                     </div>
                     <button type="button" class="btn-close"><i class="hidden">close</i></button>

@@ -26,10 +26,11 @@
 
 :root {
     --main-color: #ff922d;
-    --bg-color: #141115;
+    --bg-color: #050405;
     --main-color-strong: #f24c00;
     --bg-black: #000000;
-    --sub-color: #020229;
+    /* --sub-color: #0f0c08; */
+    --sub-color: #02070e;
     font-size: 62.5%;
 }
 
@@ -38,7 +39,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -152,6 +153,73 @@ section {
     border-radius: 50%;
     filter: blur(10px);
     z-index: 10;
+}
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background: var(--sub-color);
+}
+
+.progress {
+    position: fixed;
+    inset: 0;
+    /* z-index: 999; */
+    /* background: var(--sub-color); */
+}
+
+.progress-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.progress-text strong {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 8rem;
+}
+
+.progress-text p {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
+.progress-down {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 6rem;
+}
+
+.snow {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) translateX(var(--wind, 0px));
+        opacity: 1;
+    }
 }
 
 #header {
@@ -287,7 +355,7 @@ section {
 .sec1-bg {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 27, 0.8);
+    background: var(--sub-color);
     opacity: 0;
 }
 
@@ -377,6 +445,8 @@ section {
     cursor: pointer;
     font-weight: 700;
     font-size: 4.6rem;
+
+    white-space: nowrap;
 }
 
 .fly span:hover {
@@ -399,11 +469,30 @@ section {
 .fly .email {
     top: 100%;
     left: 7%;
+    font-size: 4rem;
 }
 
 .fly .phone {
     top: 90%;
     left: 70%;
+    font-size: 7rem;
+}
+
+.fly .mind {
+    top: 5%;
+    left: 5%;
+    font-size: 4rem;
+}
+
+.fly .mind2 {
+    top: 5%;
+    left: 90%;
+    font-size: 5rem;
+}
+
+.fly .kind {
+    top: 40%;
+    left: 80%;
     font-size: 7rem;
 }
 
@@ -629,6 +718,7 @@ section {
     background: rgba(0, 0, 0, 0.8);
     inset: 0;
     backdrop-filter: blur(20px);
+    z-index: 999;
 }
 
 .popup {
@@ -639,12 +729,10 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--main-color);
-    z-index: 999;
 }
 
 .popup-inner {
     overflow-y: auto;
-
     height: 100%;
 }
 
@@ -652,9 +740,10 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px;
-    height: 30px;
-    background: #fff url(../img/close-line.svg) no-repeat 0 0 / contain;
+    width: 70px;
+    aspect-ratio: 1;
+    transform: translateX(100%);
+    background: var(--main-color-strong) url(../img/close-line-w.svg) no-repeat 50% / 30%;
 }
 
 .popup figure {

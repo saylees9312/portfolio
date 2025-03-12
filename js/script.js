@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
     particlesJS('particles-js', {
         particles: {
             number: { value: 400, density: { enable: true, value_area: 800 } },
@@ -10,31 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 polygon: { nb_sides: 5 },
                 image: { src: 'img/github.svg', width: 100, height: 100 },
             },
-            opacity: {
-                value: 0.5,
-                random: true,
-                anim: {
-                    enable: false,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false,
-                },
-            },
-            size: {
-                value: 10,
-                random: true,
-                anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
-            },
-            line_linked: {
-                enable: false,
-                distance: 500,
-                color: '#ffffff',
-                opacity: 0.4,
-                width: 2,
-            },
+            opacity: { value: 0.5, random: true, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+            size: { value: 10, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+            line_linked: { enable: false, distance: 500, color: '#ffffff', opacity: 0.4, width: 2 },
             move: {
                 enable: true,
-                speed: 3,
+                speed: 6,
                 direction: 'bottom',
                 random: false,
                 straight: false,
@@ -52,13 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             modes: {
                 grab: { distance: 400, line_linked: { opacity: 0.5 } },
-                bubble: {
-                    distance: 400,
-                    size: 4,
-                    duration: 0.3,
-                    opacity: 1,
-                    speed: 3,
-                },
+                bubble: { distance: 400, size: 4, duration: 0.3, opacity: 1, speed: 3 },
                 repulse: { distance: 200, duration: 0.4 },
                 push: { particles_nb: 4 },
                 remove: { particles_nb: 2 },
@@ -121,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mini = document.querySelector('.mini');
     const minitxt = new SplitType(mini, { types: 'chars' });
 
-    console.log(minitxt);
+    // console.log(minitxt);
 
     gsap.from('.mini .char', {
         y: -30,
@@ -145,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // 해당하는 섹션의 인덱스값에 적용해서 이동
 
-    console.log(cursor);
+    // console.log(cursor);
     // section1 글자 자르기
     const sec1 = document.querySelector('.info');
     const title = document.querySelector('.info .sec-title');
@@ -163,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tl.to(bg, {
-        autoAlpha: 1,
+        autoAlpha: 0.8,
         width: '100%',
         height: '100%',
         translateX: '0',
@@ -195,6 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     // 자석처럼 붙는 프로필
+
+    const fly = document.querySelectorAll('.fly');
+
     class MagneticButton {
         constructor(element, options = {}) {
             this.element = element;
@@ -265,26 +242,47 @@ document.addEventListener('DOMContentLoaded', () => {
     new MagneticButton(name, {
         magnetRadius: 150,
         easing: 0.1,
-        strength: 0.3,
+        strength: 1,
     });
 
     const keywords = document.querySelector('.keywords');
     new MagneticButton(keywords, {
-        magnetRadius: 150,
+        magnetRadius: 120,
         easing: 0.1,
         strength: 0.3,
     });
 
     const email = document.querySelector('.email');
     new MagneticButton(email, {
+        magnetRadius: 100,
+        easing: 0.1,
+        strength: 0.7,
+    });
+
+    const phone = document.querySelector('.phone');
+    new MagneticButton(phone, {
+        magnetRadius: 200,
+        easing: 0.1,
+        strength: 0.6,
+    });
+
+    const mind = document.querySelector('.mind');
+    new MagneticButton(mind, {
         magnetRadius: 150,
         easing: 0.1,
         strength: 0.3,
     });
 
-    const phone = document.querySelector('.phone');
-    new MagneticButton(phone, {
-        magnetRadius: 150,
+    const mind2 = document.querySelector('.mind2');
+    new MagneticButton(mind2, {
+        magnetRadius: 110,
+        easing: 0.1,
+        strength: 0.4,
+    });
+
+    const kind = document.querySelector('.kind');
+    new MagneticButton(kind, {
+        magnetRadius: 140,
         easing: 0.1,
         strength: 0.3,
     });
@@ -295,11 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectItems = document.querySelectorAll('.project-list li');
     const previewFigures = document.querySelectorAll('.preview figure');
     const previewContainer = document.querySelector('.preview');
-    const previewImg = previewContainer.querySelector('img');
+    const previewImg = previewContainer.querySelector('.preview img');
     const popWrap = document.querySelector('.popup-wrap');
     const popUp = document.querySelector('.popup');
+    const popUpImg = document.querySelector('.popup-inner figure img');
     const btnClose = document.querySelector('.btn-close');
-    const processBtn = document.querySelectorAll('.btn-process');
+    const processBtn = gsap.utils.toArray('.btn-process');
+    // console.log(processBtn);
 
     gsap.set(previewContainer, {
         autoAlpha: 0,
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 autoAlpha: 1,
                 scale: 1,
             });
-            console.log(previewImg);
+            // console.log(previewImg);
         });
 
         item.addEventListener('mouseleave', () => {
@@ -362,21 +362,40 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(previewContainer, { top: e.clientY - e.clientY * 0.5 });
     });
 
+    gsap.set(popWrap, {
+        autoAlpha: 0,
+        scale: 0.5,
+    });
+
+    processBtn.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            gsap.to(popWrap, {
+                autoAlpha: 1,
+                scale: 1,
+                duration: 0.5,
+            });
+
+            popUpImg.setAttribute('src', `./img/process-img${index + 1}.png`);
+        });
+    });
+
+    processBtn.forEach((btn, index) => {
+        btn.addEventListener('click', function (e) {
+            // console.log(e);
+            e.preventDefault();
+        });
+    });
+
     btnClose.addEventListener('click', () => {
         gsap.to(popWrap, {
             autoAlpha: 0,
             scale: 0.8,
             duration: 0.5,
         });
-    });
 
-    processBtn.addEventListener('click', function () {
-        gsap.to(popWrap, {
-            autoAlpha: 1,
-            scale: 1,
-            duration: 1,
+        gsap.set(window, {
+            scrollTo: project,
         });
+        popUpImg.setAttribute('src', '');
     });
-
-    // 팝업창 갱신시키기
 });
