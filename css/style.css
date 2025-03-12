@@ -744,6 +744,7 @@ section {
     aspect-ratio: 1;
     transform: translateX(100%);
     background: var(--main-color-strong) url(../img/close-line-w.svg) no-repeat 50% / 30%;
+    cursor: pointer;
 }
 
 .popup figure {
