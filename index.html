@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -14,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="./js/loading.js"></script>
@@ -103,9 +105,12 @@
           <div class="project-wrap">
             <ul class="project-list">
               <li>
-                <p>Mad for Garlic<strong class="badge">1M</strong></p>
+                <p>
+                  Mad for Garlic
+                  <strong class="badge">1M</strong>
+                </p>
                 <div class="project-con">
-                  <a href="#"> site </a>
+                  <a href="https://saylees9312.github.io/madforgarlic/"> site </a>
                   <a href="#" class="btn-process"> process </a>
                 </div>
               </li>
@@ -115,7 +120,7 @@
                   <strong class="badge">5W</strong>
                 </p>
                 <div class="project-con">
-                  <a href="#"> site </a>
+                  <a href="https://saylees9312.github.io/jungheung/"> site </a>
                   <a href="#" class="btn-process"> process </a>
                 </div>
               </li>
@@ -142,61 +147,37 @@
               <li>
                 <p>
                   bianglo(clone)
-                  <strong class="badge">5W</strong>
+                  <strong class="badge">3D</strong>
                 </p>
                 <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
+                  <a href="https://saylees9312.github.io/bienglo/" class=""> site </a>
                 </div>
               </li>
               <li>
                 <p>
                   segyung(clone)
-                  <strong class="badge">5W</strong>
+                  <strong class="badge">6D</strong>
                 </p>
                 <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
+                  <a href="https://saylees9312.github.io/segyung/" class=""> site </a>
                 </div>
               </li>
               <li>
                 <p>
                   HRD-net(clone)
-                  <strong class="badge">5W</strong>
+                  <strong class="badge">18H</strong>
                 </p>
                 <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
+                  <a href="https://saylees9312.github.io/hrd-net/" class=""> site </a>
                 </div>
               </li>
-              <li>
+              <li class="popup-last">
                 <p>
                   banner design
-                  <strong class="badge">5W</strong>
+                  <strong class="badge">2W</strong>
                 </p>
                 <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
-                </div>
-              </li>
-              <li>
-                <p>
-                  banner design
-                  <strong class="badge">5W</strong>
-                </p>
-                <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
-                </div>
-              </li>
-              <li>
-                <p>
-                  banner design
-                  <strong class="badge">5W</strong>
-                </p>
-                <div class="project-con">
-                  <a href="#"> banner </a>
-                  <a href="#" class="btn-process"> process </a>
+                  <a href="#" class="btn-banner-design"> view </a>
                 </div>
               </li>
             </ul>
@@ -215,6 +196,7 @@
             <strong>park seol hee</strong>
             <p>saylees9312@naver.com</p>
             <p>010 2466 0156</p>
+            <a href="https://github.com/saylees9312/portfolio.git">https://github.com/saylees9312/portfolio.git</a>
           </div>
         </div>
       </section>
@@ -226,6 +208,36 @@
             </figure>
           </div>
           <button type="button" class="btn-close"><i class="hidden">close</i></button>
+        </div>
+      </div>
+      <div class="popup-slide-wrap">
+        <div class="popup-inner">
+          <div class="swiper popup-top-slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img1.jpg" alt="" /></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img2.jpg" alt="" /></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img3.jpg" alt="" /></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img4.jpg" alt="" /></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img5.jpg" alt="" /></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure><img src="./img/preview-img6.jpg" alt="" /></figure>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-close popup-close"><i class="hidden">close</i></button>
+          <div class="swiper-pagination"></div>
+          <div class="popup-btn popup-btn-prev"></div>
+          <div class="popup-btn popup-btn-next"></div>
         </div>
       </div>
     </main>
