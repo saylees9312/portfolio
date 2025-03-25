@@ -47,7 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sec3 = document.querySelector('.project');
   const contactMe = document.querySelector('.btn-contact');
   const menuList = document.querySelectorAll('.menu li');
-  const sections = document.querySelectorAll('#main section');
+  const sectionInfo = document.querySelector('#info');
+  const btnLogo = document.querySelector('.btn-change');
+  const cursorSVG = document.querySelector('.cursor svg');
 
   let x = 0;
   let y = 0;
@@ -69,6 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     gsap.to(followCursor, { left: mx, top: my });
+  });
+
+  btnLogo.addEventListener('mouseenter', () => {
+    cursorSVG.style.display = 'block';
+  });
+
+  btnLogo.addEventListener('mouseleave', () => {
+    cursorSVG.style.display = 'none';
   });
 
   sec3.addEventListener('mouseenter', () => {
@@ -106,19 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     repeat: -1,
   });
 
-  // 메뉴를 클릭할때
-  menuList.forEach(function (menu, index) {
-    // 클릭한 메뉴의 li의 index값을 가져와
-    // menu[index];
-    // console.log(menu, index, this);
-    menu.addEventListener('click', function () {
-      gsap.to(window, {
-        scrollTo: sections[index],
-      });
-    });
-  });
-  // 해당하는 섹션의 인덱스값에 적용해서 이동
-
   // console.log(cursor);
   // section1 글자 자르기
   const sec1 = document.querySelector('.info');
@@ -126,15 +123,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const title2 = document.querySelector('.txt');
   const text = new SplitType(title2, { types: 'chars' });
   const bg = document.querySelector('.sec1-bg');
+  let isClickedNavigation = false; // 클릭으로 진입했는지 확인하는 플래그
+  let scrollTrigger; // ScrollTrigger 인스턴스를 저장할 변수
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: sec1,
       start: 'top 0',
-      end: '+=500%',
-      scrub: 1,
+      end: '+=200%',
+      scrub: 0.5,
       pin: true,
+      onEnter: () => {
+        // 클릭으로 진입한 경우에만 애니메이션 완료 상태 유지
+        if (isClickedNavigation) {
+          tl.progress(1);
+          // ScrollTrigger 비활성화
+          scrollTrigger.disable();
+        }
+      },
     },
   });
+
+  // ScrollTrigger 인스턴스 저장
+  scrollTrigger = ScrollTrigger.getById(tl.scrollTrigger.id);
 
   tl.to(bg, {
     autoAlpha: 0.8,
@@ -142,21 +153,25 @@ document.addEventListener('DOMContentLoaded', () => {
     height: '100%',
     translateX: '0',
     translateY: '0',
+    duration: 1,
   });
 
   tl.from(title, {
     opacity: 0,
     y: 50,
+    duration: 1,
   });
 
   tl.from(title2, {
     opacity: 0,
     y: 50,
+    duration: 1,
   });
 
   tl.from('.txt .char', {
     opacity: 0.1,
     stagger: 0.03,
+    duration: 1,
   });
 
   tl.from(
@@ -164,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       opacity: 0,
       y: 50,
+      duration: 1,
     },
     '-=0.8'
   );
@@ -440,5 +456,22 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: '.popup-btn-next',
       prevEl: '.popup-btn-prev',
     },
+  });
+
+  // info 메뉴 링크 클릭 이벤트 처리
+  menuList.forEach((menu) => {
+    if (menu.querySelector('a[href="#info"]')) {
+      menu.addEventListener('click', (e) => {
+        e.preventDefault();
+        isClickedNavigation = true; // 클릭으로 진입함을 표시
+        tl.progress(1); // 애니메이션 즉시 완료
+        const totalHeight = document.documentElement.scrollHeight;
+        const targetScroll = totalHeight / 3;
+        gsap.to(window, {
+          scrollTo: { y: targetScroll, offsetY: 0 },
+          duration: 0.1,
+        });
+      });
+    }
   });
 });
