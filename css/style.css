@@ -536,6 +536,62 @@ section {
   left: 80%;
   font-size: 7rem;
 }
+.fly .attension {
+  top: 41%;
+  left: 3%;
+  font-size: 5rem;
+}
+
+.fly .skill1 {
+  top: -30%;
+  left: 0%;
+  width: 9rem;
+  height: 9rem;
+  background: url(../img/javascript-fill.svg) no-repeat 50% / contain;
+}
+
+.fly .skill2 {
+  top: -30%;
+  left: initial;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  background: url(../img/illustrator-fill.svg) no-repeat 50% / contain;
+}
+
+.fly .skill3 {
+  top: 120%;
+  left: 35%;
+  width: 8rem;
+  height: 8rem;
+  background: url(../img/figma-fill.svg) no-repeat 50% / contain;
+}
+
+.fly .skill4 {
+  top: -10%;
+  left: initial;
+  right: 25%;
+  width: 5rem;
+  height: 5rem;
+  background: url(../img/html5-fill.svg) no-repeat 50% / contain;
+}
+
+.fly .skill5 {
+  top: -16%;
+  left: 22%;
+  width: 6rem;
+  height: 6rem;
+  background: url(../img/photoshop-fill.svg) no-repeat 50% / contain;
+}
+
+.fly .skill6 {
+  top: 60%;
+  left: initial;
+  right: 0%;
+  width: 8rem;
+  height: 8rem;
+  background: url(../img/css3-fill.svg) no-repeat 50% / contain;
+}
 
 .project {
   position: relative;
@@ -657,8 +713,8 @@ section {
 }
 
 .preview {
-  width: 30rem;
-  height: 30rem;
+  width: 40rem;
+  height: 40rem;
   position: absolute;
   top: 50%;
   left: 50%;

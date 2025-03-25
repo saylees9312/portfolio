@@ -303,6 +303,55 @@ document.addEventListener('DOMContentLoaded', () => {
     strength: 0.3,
   });
 
+  const attension = document.querySelector('.attension');
+  new MagneticButton(attension, {
+    magnetRadius: 140,
+    easing: 0.1,
+    strength: 0.3,
+  });
+
+  const skill1 = document.querySelector('.skill1');
+  new MagneticButton(skill1, {
+    magnetRadius: 200,
+    easing: 0.1,
+    strength: 0.5,
+  });
+
+  const skill2 = document.querySelector('.skill2');
+  new MagneticButton(skill2, {
+    magnetRadius: 180,
+    easing: 0.1,
+    strength: 0.6,
+  });
+
+  const skill3 = document.querySelector('.skill3');
+  new MagneticButton(skill3, {
+    magnetRadius: 200,
+    easing: 0.1,
+    strength: 0.4,
+  });
+
+  const skill4 = document.querySelector('.skill4');
+  new MagneticButton(skill4, {
+    magnetRadius: 190,
+    easing: 0.1,
+    strength: 0.7,
+  });
+
+  const skill5 = document.querySelector('.skill5');
+  new MagneticButton(skill5, {
+    magnetRadius: 220,
+    easing: 0.1,
+    strength: 0.3,
+  });
+
+  const skill6 = document.querySelector('.skill6');
+  new MagneticButton(skill6, {
+    magnetRadius: 120,
+    easing: 0.1,
+    strength: 0.4,
+  });
+
   // 호버할때 프리뷰 보여주기
   const project = document.querySelector('.project');
   const sec3Bg = project.querySelector('.sec3-bg');
