@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.5,
       });
 
-      popUpImg.setAttribute('src', `./img/process-img${index + 1}.png`);
+      popUpImg.setAttribute('src', `./img/process-img${index + 1}.jpg`);
     });
   });
 
