@@ -137,8 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // 클릭으로 진입한 경우에만 애니메이션 완료 상태 유지
         if (isClickedNavigation) {
           tl.progress(1);
-          // ScrollTrigger 비활성화
-          scrollTrigger.disable();
         }
       },
     },
