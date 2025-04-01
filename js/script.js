@@ -521,4 +521,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  const graphic = document.querySelector('.graphic');
+  gsap.to(graphic, {
+    scrollTrigger: {
+      trigger: graphic,
+      start: 'top 0',
+      end: 'bottom',
+      pin: true,
+    },
+  });
 });
