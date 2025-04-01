@@ -361,9 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const popUpImg = document.querySelector('.popup-inner figure img');
   const btnClose = document.querySelector('.btn-close');
   const processBtn = gsap.utils.toArray('.btn-process');
-  const popUpSlideWrap = document.querySelector('.popup-slide-wrap');
-  const btnLastProject = document.querySelector('.btn-banner-design');
-  const btnSliderClose = document.querySelector('.popup-close');
   // console.log(processBtn);
 
   gsap.set(previewContainer, {
@@ -444,10 +441,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  btnLastProject.addEventListener('click', (e) => {
-    e.preventDefault();
-  });
-
   processBtn.forEach((btn, index) => {
     btn.addEventListener('click', function (e) {
       // console.log(e);
@@ -468,31 +461,15 @@ document.addEventListener('DOMContentLoaded', () => {
     popUpImg.setAttribute('src', '');
   });
 
-  gsap.set(popUpSlideWrap, {
-    autoAlpha: 0,
-    scale: 0.5,
-  });
-
-  btnLastProject.addEventListener('click', () => {
-    gsap.to(popUpSlideWrap, {
-      autoAlpha: 1,
-      scale: 1,
-    });
-    gsap.to(popWrap, {
-      autoAlpha: 0,
-    });
-  });
-
-  btnSliderClose.addEventListener('click', () => {
-    gsap.to(popUpSlideWrap, {
-      autoAlpha: 0,
-      scale: 0,
-    });
-  });
-
   const topSwiper = new Swiper('.popup-top-slide', {
     loop: true,
-    autoplay: true,
+    autoplay: {
+      delay: 0,
+    },
+    speed: 3000,
+    slidesPerView: 3,
+    direction: 'vertical',
+    disableOnInteraction: false,
 
     pagination: {
       el: '.swiper-pagination',
@@ -500,8 +477,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     navigation: {
-      nextEl: '.popup-btn-next',
-      prevEl: '.popup-btn-prev',
+      nextEl: '.graphic-btn-next',
+      prevEl: '.graphic-btn-prev',
     },
   });
 

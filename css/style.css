@@ -737,10 +737,19 @@ section {
   position: relative;
 }
 
+.graphic .inner {
+  height: 100%;
+}
+
 .grapic-bg {
   position: absolute;
   inset: 0;
   background: #000;
+}
+
+.graphic-wrap {
+  width: 100%;
+  height: 100%;
 }
 
 .contact {
@@ -872,28 +881,31 @@ section {
   z-index: 999;
 }
 
-.popup-slide-wrap .popup-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .popup-top-slide {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 20%;
+  height: 100%;
   top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: -10%;
   /* background: var(--main-color); */
   overflow: hidden;
   z-index: 1;
 }
 
+.popup-top-slide .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 .popup-top-slide .swiper-slide {
   width: 100%;
-  height: 100%;
+  height: 80%;
   /* border: 1px solid khaki; */
+  transform: scale(0.5);
+  transition: 0.4s;
+}
+
+.popup-top-slide .swiper-slide-active {
+  transform: scale(1);
 }
 
 .popup-slide-wrap .btn-close {
@@ -919,7 +931,7 @@ section {
   object-fit: contain;
 }
 
-.popup-btn {
+.graphic-btn {
   position: absolute;
   top: 50%;
   width: 4vw;
@@ -929,45 +941,15 @@ section {
   transform: translateY(-25%);
   background: var(--main-color) no-repeat 50% / 50%;
   border-radius: 50%;
+  display: none;
 }
 
-.popup-btn-prev {
-  left: 15vw;
+.graphic-btn-prev {
+  left: 5vw;
   background-image: url(../img/arrow-left-s-line.svg);
 }
 
-.popup-btn-next {
-  right: 15vw;
+.graphic-btn-next {
+  right: 5vw;
   background-image: url(../img/arrow-right-s-line.svg);
-}
-
-.popup-bottom-slide {
-  position: absolute;
-  bottom: 10rem;
-  left: 50%;
-  width: 60%;
-  height: 20%;
-  transform: translateX(-50%);
-}
-
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  position: absolute;
-  bottom: 2rem;
-}
-
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  background: var(--main-color);
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: var(--main-color-strong);
-  width: 3rem;
-  height: 1.5rem;
-  border-radius: 3rem;
 }
