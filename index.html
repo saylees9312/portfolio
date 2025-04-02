@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -228,34 +229,33 @@
             <div>
               <div class="graphic-wrap">
                 <div class="swiper popup-top-slide">
-                  <div class="swiper-wrapper">
+                  <div class="swiper-wrapper thumbnail-wrapper">
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic1.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic1.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic2.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic2.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic3.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic3.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic4.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic4.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic5.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic5.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic6.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic6.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic7.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic7.jpg" alt="" /></a>
                     </div>
                     <div class="swiper-slide">
-                      <figure><img src="./img/grapic8.jpg" alt="" /></figure>
+                      <a href="#" class="g-popup-btn"><img src="./img/grapic8.jpg" alt="" /></a>
                     </div>
                   </div>
-                  <div class="graphic-btn graphic-btn-prev"></div>
-                  <div class="graphic-btn graphic-btn-next"></div>
+                  <div class="swiper-pagination"></div>
                 </div>
               </div>
             </div>
@@ -273,19 +273,56 @@
           </div>
         </div>
       </section>
-      <div class="popup-wrap">
-        <div class="popup">
-          <div class="popup-inner">
+      <div class="popup-wrap process-popup">
+        <div class="popup p-popup">
+          <div class="popup-inner p-popup-inner">
             <figure>
               <img src="" alt="" />
             </figure>
           </div>
-          <button type="button" class="btn-close"><i class="hidden">close</i></button>
+          <button type="button" class="btn-close process-close"><i class="ri-close-line"></i></button>
         </div>
       </div>
+      <div class="popup-wrap graphic-popup">
+        <div class="popup g-popup">
+          <div class="popup-inner g-popup-inner">
+            <div class="swiper banner-slider">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic1.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic2.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic3.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic4.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic5.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic6.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic7.jpg" alt="" /></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="./img/grapic8.jpg" alt="" /></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-close graphic-close"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="g-slide-btn g-slide-prev"></div>
+        <div class="g-slide-btn g-slide-next"></div>
+      </div>
     </main>
-    <footer id="footer">
-      <div class="btn-contact"><i class="hidden">contact me?</i></div>
-    </footer>
+    <div class="btn-contact"><i class="hidden">contact me?</i></div>
+    <footer id="footer"></footer>
   </body>
 </html>

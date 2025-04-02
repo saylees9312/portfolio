@@ -357,9 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const previewFigures = document.querySelectorAll('.preview figure');
   const previewContainer = document.querySelector('.preview');
   const previewImg = previewContainer.querySelector('.preview img');
-  const popWrap = document.querySelector('.popup-wrap');
-  const popUpImg = document.querySelector('.popup-inner figure img');
-  const btnClose = document.querySelector('.btn-close');
+  const processPU = document.querySelector('.process-popup');
+  const popUpImg = document.querySelector('.p-popup-inner figure img');
+  const processClose = document.querySelector('.process-close');
   const processBtn = gsap.utils.toArray('.btn-process');
   // console.log(processBtn);
 
@@ -424,19 +424,18 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to(previewContainer, { top: e.clientY - e.clientY * 0.5 });
   });
 
-  gsap.set(popWrap, {
+  gsap.set(processPU, {
     autoAlpha: 0,
     scale: 0.5,
   });
 
   processBtn.forEach((btn, index) => {
     btn.addEventListener('click', () => {
-      gsap.to(popWrap, {
+      gsap.to(processPU, {
         autoAlpha: 1,
         scale: 1,
         duration: 0.5,
       });
-
       popUpImg.setAttribute('src', `./img/process-img${index + 1}.jpg`);
     });
   });
@@ -448,8 +447,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  btnClose.addEventListener('click', () => {
-    gsap.to(popWrap, {
+  processClose.addEventListener('click', () => {
+    gsap.to(processPU, {
       autoAlpha: 0,
       scale: 0.8,
       duration: 0.5,
@@ -467,18 +466,22 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 0,
     },
     speed: 3000,
-    slidesPerView: 3,
-    direction: 'vertical',
-    disableOnInteraction: false,
-
+    mousewheel: true,
+    slidesPerView: 4,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
+  });
 
+  const bannerSwiper = new Swiper('.banner-slider', {
+    loop: true,
+    thumbs: {
+      swiper: topSwiper,
+    },
     navigation: {
-      nextEl: '.graphic-btn-next',
-      prevEl: '.graphic-btn-prev',
+      nextEl: '.g-slide-next',
+      prevEl: '.g-slide-prev',
     },
   });
 
@@ -500,6 +503,66 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const graphic = document.querySelector('.graphic');
+  const graphicPU = document.querySelector('.graphic-popup');
+  const graphicImg = document.querySelectorAll('.graphic-wrap .swiper-slide figure');
+  const gPopUpImg = document.querySelector('.g-popup-inner figure img');
+  const graphicClose = document.querySelector('.graphic-close');
+  const gPopupBtn = document.querySelectorAll('.g-popup-btn');
+  const sliderNext = document.querySelector('.g-slide-next');
+  const gPopupInner = document.querySelector('.g-popup-inner');
+
+  gsap.set(graphicPU, {
+    autoAlpha: 0,
+    scale: 0,
+  });
+
+  // 팝업 내부 클릭 이벤트 처리
+  gPopupInner.addEventListener('click', (e) => {
+    const rect = gPopupInner.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const width = rect.width;
+
+    // 화면 중앙을 기준으로 좌우 구분
+    if (x < width / 2) {
+      bannerSwiper.slidePrev();
+      topSwiper.slidePrev();
+    } else {
+      bannerSwiper.slideNext();
+      topSwiper.slideNext();
+    }
+  });
+
+  gPopupBtn.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      gsap.to(graphicPU, {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.5,
+      });
+      // 클릭한 이미지의 인덱스로 슬라이더 이동
+      bannerSwiper.slideTo(index);
+      topSwiper.slideTo(index);
+    });
+  });
+
+  gPopupBtn.forEach((btn, index) => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+    });
+  });
+
+  graphicClose.addEventListener('click', () => {
+    gsap.to(graphicPU, {
+      autoAlpha: 0,
+      scale: 0.8,
+      duration: 0.5,
+    });
+
+    gsap.set(window, {
+      scrollTo: graphic,
+    });
+  });
+
   gsap.to(graphic, {
     scrollTrigger: {
       trigger: graphic,
