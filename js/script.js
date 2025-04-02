@@ -481,7 +481,6 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 0,
     },
     speed: 3000,
-    mousewheel: true,
     slidesPerView: 4,
     pagination: {
       el: '.swiper-pagination',
@@ -599,5 +598,24 @@ document.addEventListener('DOMContentLoaded', () => {
       end: 'bottom',
       pin: true,
     },
+  });
+
+  graphic.addEventListener('mouseenter', () => {
+    gsap.to(cursor, {
+      zIndex: 1005,
+    });
+    gsap.to(followCursor, {
+      autoAlpha: 0,
+    });
+  });
+
+  graphic.addEventListener('mouseleave', () => {
+    gsap.to(cursor, {
+      zIndex: 0,
+    });
+    gsap.to(followCursor, {
+      autoAlpha: 1,
+      zIndex: 0,
+    });
   });
 });
