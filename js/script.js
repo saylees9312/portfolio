@@ -361,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const popUpImg = document.querySelector('.p-popup-inner figure img');
   const processClose = document.querySelector('.process-close');
   const processBtn = gsap.utils.toArray('.btn-process');
+  const processDim = document.querySelector('.popup-wrap');
   // console.log(processBtn);
 
   gsap.set(previewContainer, {
@@ -442,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   processBtn.forEach((btn, index) => {
     btn.addEventListener('click', function (e) {
-      // console.log(e);
       e.preventDefault();
     });
   });
@@ -458,6 +458,21 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTo: project,
     });
     popUpImg.setAttribute('src', '');
+  });
+
+  processDim.addEventListener('click', (e) => {
+    if (e.target === processDim) {
+      gsap.to(processPU, {
+        autoAlpha: 0,
+        scale: 0.8,
+        duration: 0.5,
+      });
+
+      gsap.set(window, {
+        scrollTo: project,
+      });
+      popUpImg.setAttribute('src', '');
+    }
   });
 
   const topSwiper = new Swiper('.popup-top-slide', {
@@ -561,6 +576,20 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set(window, {
       scrollTo: graphic,
     });
+  });
+
+  graphicPU.addEventListener('click', (e) => {
+    if (e.target === graphicPU) {
+      gsap.to(graphicPU, {
+        autoAlpha: 0,
+        scale: 0.8,
+        duration: 0.5,
+      });
+
+      gsap.set(window, {
+        scrollTo: graphic,
+      });
+    }
   });
 
   gsap.to(graphic, {
