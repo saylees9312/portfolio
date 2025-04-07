@@ -116,6 +116,7 @@ img {
 
 .inner {
   width: 162rem;
+  width: 84.375%;
   margin: 0 auto;
   position: relative;
 }
@@ -401,7 +402,7 @@ section {
 }
 
 .info .inner {
-  width: 114rem;
+  width: 60%;
   /* border: 1px solid #000; */
   position: relative;
 }
@@ -410,7 +411,7 @@ section {
   position: relative;
   text-transform: capitalize;
   font-weight: 700;
-  font-size: 4rem;
+  font-size: clamp(4rem, 2vw, 5rem);
   text-align: center;
 }
 
@@ -427,7 +428,7 @@ section {
   position: relative;
   margin-top: 6rem;
   font-weight: 300;
-  font-size: 2.4rem;
+  font-size: clamp(2.4rem, 1.2vw, 3rem);
   line-height: 2;
 }
 
@@ -440,6 +441,10 @@ section {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
+}
+
+.profile .inner {
+  width: 162rem;
 }
 
 .profile-wrap {
@@ -611,7 +616,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
 }
 
 .project-wrap {
@@ -619,7 +623,7 @@ section {
 }
 
 .project-list {
-  margin-top: 6rem;
+  margin-top: 6.2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -631,11 +635,11 @@ section {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 5rem;
+  gap: 3vw;
   font-size: 4rem;
   font-weight: 300;
   color: #fff;
-  padding: 3rem 3rem;
+  padding: 4vh 3vw;
   text-transform: capitalize;
   position: relative;
   width: 50%;
@@ -713,8 +717,8 @@ section {
 }
 
 .preview {
-  width: 40rem;
-  height: 40rem;
+  width: 21vw;
+  aspect-ratio: 1;
   position: absolute;
   top: 50%;
   left: 50%;
