@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isClickedNavigation = true; // 클릭으로 진입함을 표시
         tl.progress(1); // 애니메이션 즉시 완료
         const totalHeight = document.documentElement.scrollHeight;
-        const targetScroll = totalHeight / 3;
+        const targetScroll = totalHeight / 4;
         gsap.to(window, {
           scrollTo: { y: targetScroll, offsetY: 0 },
           duration: 0.1,

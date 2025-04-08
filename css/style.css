@@ -444,13 +444,14 @@ section {
 }
 
 .profile .inner {
-  width: 162rem;
+  max-width: 162rem;
 }
 
 .profile-wrap {
   position: relative;
   /* background: #000; */
   margin-top: 12rem;
+  height: 45vh;
 }
 
 .profile-img {
